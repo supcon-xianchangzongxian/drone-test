@@ -1,6 +1,6 @@
-# workspace:
-#   base: /src/drone-demo
-#   path: .
+workspace:
+  base: /go
+  path: /src/drone-demo
 
 pipeline:
   build:
@@ -9,6 +9,5 @@ pipeline:
      commands:
        - pwd
        - ls
-       - cd /src/drone-demo
-       - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o demo63 .
-       - ./demo63
+       - go test
+       - go build
