@@ -1,6 +1,6 @@
-workspace:
-  base: .
-  path: /src/drone-demo
+# workspace:
+#   base: /
+#   path: /src/drone-demo
 
 pipeline:
   build:
