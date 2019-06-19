@@ -1,0 +1,13 @@
+workspace:
+  base: /src/drone-demo
+  path: .
+
+pipeline:
+  build:
+     image: demo63
+     # pull: true
+     commands:
+       - pwd
+       - ls
+       - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
+       - ./app
