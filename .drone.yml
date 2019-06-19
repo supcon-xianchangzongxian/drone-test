@@ -9,5 +9,6 @@ pipeline:
      commands:
        - pwd
        - ls
+       - cd /src/drone-demo
        - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o demo63 .
        - ./demo63
