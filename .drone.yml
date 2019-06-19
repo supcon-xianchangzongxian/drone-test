@@ -8,5 +8,6 @@ pipeline:
        - pwd
        - ls
        - cd src/drone-demo
-       - go test
+      #  - go test
        - go build
+       - docker build -t demo63:v1 .
