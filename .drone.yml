@@ -29,8 +29,8 @@ steps:
 - name: build
   image: docker
   commands:
-  - cd /var/run/
-  - ls
+  # - cd /var/run/
+  # - ls
   - cd /src/drone-demo
   - ls
   - docker  -H unix:///var/run/docker.sock build -t registry.cn-hangzhou.aliyuncs.com/supcon_rd/drone-demo63:v1 .
