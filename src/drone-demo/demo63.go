@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	// fmt.Println()
+	fmt.Println()
 	// 第二个衍生问题的示例。
 	num := uint32(18)
 	fmt.Printf("The number: %d\n", num)
