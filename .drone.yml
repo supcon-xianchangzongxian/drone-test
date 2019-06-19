@@ -4,7 +4,7 @@ workspace:
 
 pipeline:
   build:
-    #  image: demo63
+     image: golang:alpine
      # pull: true
      commands:
        - pwd
