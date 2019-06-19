@@ -32,10 +32,9 @@ steps:
   - pwd
   - ls
   - cd src/drone-demo
-  - docker ps -a
-  - docker build -t registry.cn-hangzhou.aliyuncs.com/supcon_rd/drone-demo63:v1 .
-  volumes:
-  - /var/run/docker.sock:/var/run/docker.sock
+  - ls
+  - docker build -H unix:///var/run/docker.soc -t registry.cn-hangzhou.aliyuncs.com/supcon_rd/drone-demo63:v1 .
+
 #   volumes:
 #   - name: docker
 #     path: /var/run/docker.sock
