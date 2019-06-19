@@ -1,13 +1,42 @@
 
 
-pipeline:
-  build:
-     image: golang:alpine
-     # pull: true
-     commands:
-       - pwd
-       - ls
-       - cd src/drone-demo
-      #  - go test
-       - go build
-       - docker build -t demo63:v1 .
+# pipeline:
+#   build:
+#      image: golang:alpine
+#      # pull: true
+#      commands:
+#        - pwd
+#        - ls
+#        - cd src/drone-demo
+#       #  - go test
+#        - go build
+#        - ls
+#   puslish:
+#      image: plugins/docker
+     
+   
+     
+kind: pipeline
+name: default
+
+steps:
+- name: backend
+  image: golang
+  commands:
+  - go build
+  - go test
+- name: build
+  image: docker
+  commands:
+  - pwd
+  - ls
+  - docker ps -a
+  - docker build -t registry.cn-hangzhou.aliyuncs.com/supcon_rd/drone-demo63:v1 .
+  volumes:
+  - name: docker
+    path: /var/run/docker.sock
+
+volumes:
+- name: docker
+  host:
+    path: /var/run/docker.sock
