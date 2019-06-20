@@ -36,11 +36,13 @@ steps:
   # - docker push registry.cn-hangzhou.aliyuncs.com/supcon_rd/drone-demo63:v1
 
 - name: puslish
-  iamge: plugins/docker
+  image: plugins/docker
   commands:
   - cd src/drone-demo
+  - ls
   settings:
     registry: registry.cn-hangzhou.aliyuncs.com
+    repo: drone-demo64
     username:
       from_secret: docker_username
     password:
