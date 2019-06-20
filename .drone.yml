@@ -49,8 +49,9 @@ steps:
   settings:
     dockerfile: ./src/drone-demo/Dockerfile
     context: ./src/drone-demo
+    
+    repo: registry.cn-hangzhou.aliyuncs.com/supcon_rd/drone-demo64
     registry: registry.cn-hangzhou.aliyuncs.com
-    repo: supcon_rd/drone-demo64
     username: supconyun
       # from_secret: docker_username
     password: Hello123456
