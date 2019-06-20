@@ -37,10 +37,10 @@ steps:
 
 - name: puslish
   image: plugins/docker
-  commands:
-  - pwd
-  - cd src/drone-demo
-  - ls
+  # commands:
+  # - pwd
+  # - cd src/drone-demo
+  # - ls
   registry: registry.cn-hangzhou.aliyuncs.com/supcon_rd
   repo: drone-demo64
   username:
@@ -48,7 +48,7 @@ steps:
   password:
     from_secret: docker_password
   tags: lastest
-  # file: src/drone-demo/Dockerfile
+  file: /drone/src/src/drone-demo/Dockerfile
   volumes:
   - name: docker
     path: /var/run/docker.sock
