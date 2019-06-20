@@ -30,7 +30,8 @@ steps:
 - name: notify
   image: drillster/drone-email  
   host: mail.supcon.com
-  username: dingfeng2
+  skip_verify: true
+  username: dingfeng2@supcon.com
   password: j5DpU>hP
   from: dingfeng2@supcon.com 
   recipients: [ tongcheng@supcon.com,wengtingting@supcon.com,dingfeng2@supcon.com ]
