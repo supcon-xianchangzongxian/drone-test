@@ -18,9 +18,8 @@
      
 kind: pipeline
 name: default
-# workspace:
-#   base: /drone/src/src/drone-demo/
-#   path: /
+workspace:
+  base: /drone/src
 steps:
 - name: backend
   image: golang
@@ -45,7 +44,7 @@ steps:
   #     from_secret: password
 - name: puslish
   image: plugins/docker
-  Context: src/drone-demo
+  # Context: /drone/src/src/drone-demo
   Dockerfile: src/drone-demo
   registry: registry.cn-hangzhou.aliyuncs.com/supcon_rd
   repo: drone-demo64
