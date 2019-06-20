@@ -29,7 +29,6 @@ steps:
   - cd src/drone-demo
   - go build
   # - ls
-  - pwd
   # - go test
 # - name: build
 #   image: docker
@@ -45,7 +44,6 @@ steps:
   #     from_secret: password
 - name: puslish
   image: plugins/docker
-  # context: src/drone-demo
   settings:
     dockerfile: ./src/drone-demo/Dockerfile
     context: ./src/drone-demo
@@ -62,6 +60,16 @@ steps:
     path: /var/run/docker.sock
   when:
     branch: master
+
+- name: notify
+  image: drillster/drone-email  
+  host: mail.supcon.com
+  username: dingfeng2
+  password: j5DpU>hP
+  from: dingfeng2@supcon.com 
+  recipients: [ tongcheng@supcon.com,wengtingting@supcon.com,dingfeng2@supcon.com ]
+  when:
+    status: [ changed, failure ]
 volumes:
 - name: docker
   host:
