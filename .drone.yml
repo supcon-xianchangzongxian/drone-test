@@ -30,12 +30,12 @@ steps:
 - name: notify
   image: drillster/drone-email  
   settings:
-    host: mail.qq.com
-    port: 443
+    host: smtp.supcon.com
+    port: 465
     skip_verify: true
-    username: 824637572@qq.com
-    password: qwerasdf123
-    from: 824637572@qq.com 
+    username: dignfeng2@supcon.com
+    password: j5DpU>hP
+    from: dignfeng2@supcon.com
     # secret: [mail.qq.com, 80, 824637572@qq.com,qwerasdf123,824637572@qq.com]
     recipients: [ tongcheng@supcon.com,wengtingting@supcon.com,dingfeng2@supcon.com ]
   when:
