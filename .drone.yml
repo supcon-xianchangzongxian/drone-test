@@ -24,11 +24,12 @@ steps:
 - name: backend
   image: golang
   commands:
-  - go env
-  - pwd
+  # - go env
+  # - pwd
   - cd src/drone-demo
   - go build
-  - ls
+  # - ls
+  - pwd
   # - go test
 # - name: build
 #   image: docker
@@ -46,7 +47,7 @@ steps:
   image: plugins/docker
   # context: src/drone-demo
   settings:
-    # dockerfile: Dockerfile
+    # dockerfile: ./src/drone-demo/Dockerfile
     context: ./src/drone-demo
     registry: registry.cn-hangzhou.aliyuncs.com
     repo: supcon_rd/drone-demo64
