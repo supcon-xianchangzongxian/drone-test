@@ -28,6 +28,7 @@ steps:
   - go env
   - pwd
   # - cd src/drone-demo
+  - ls
   - go build
   # - go test
 # - name: build
