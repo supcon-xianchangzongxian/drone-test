@@ -33,9 +33,10 @@ steps:
     host: mail.supcon.com
     # skip_verify: true
     port: 80
-    username: dingfeng2@supcon.com
-    password: j5DpU>hP
-    from: dingfeng2@supcon.com 
+    # username: dingfeng2@supcon.com
+    # password: j5DpU>hP
+    # from: dingfeng2@supcon.com 
+    secret: [dingfeng2@supcon.com,j5DpU>hP,dingfeng2@supcon.com]
     recipients: [ tongcheng@supcon.com,wengtingting@supcon.com,dingfeng2@supcon.com ]
   when:
     branch: [ master, testing ]
