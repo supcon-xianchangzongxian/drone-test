@@ -32,7 +32,7 @@ steps:
   settings:
     host: https://mail.supcon.com
     # skip_verify: true
-    port: 443
+    # port: 443
     username: dingfeng2@supcon.com
     password: j5DpU>hP
     from: dingfeng2@supcon.com 
