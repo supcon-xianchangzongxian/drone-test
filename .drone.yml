@@ -40,15 +40,14 @@ steps:
   commands:
   - cd src/drone-demo
   - ls
-  settings:
-    registry: registry.cn-hangzhou.aliyuncs.com
-    repo: drone-demo64
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
-    tags:
-        - latest
+  registry: registry.cn-hangzhou.aliyuncs.com
+  repo: drone-demo64
+  username:
+    from_secret: docker_username
+  password:
+    from_secret: docker_password
+  tags:
+      - latest
   volumes:
   - name: docker
     path: /var/run/docker.sock
