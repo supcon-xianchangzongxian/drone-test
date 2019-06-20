@@ -27,8 +27,8 @@ steps:
   - go env
   - pwd
   - cd src/drone-demo
-  - ls
   - go build
+  - ls
   # - go test
 # - name: build
 #   image: docker
