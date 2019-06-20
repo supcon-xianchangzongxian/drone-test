@@ -19,7 +19,7 @@
 kind: pipeline
 name: default
 workspace:
-  base: /go
+  base: /drone/src
   path: src/drone-demo/
 steps:
 - name: backend
