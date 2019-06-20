@@ -52,10 +52,10 @@ steps:
     
     repo: registry.cn-hangzhou.aliyuncs.com/supcon_rd/drone-demo64
     registry: registry.cn-hangzhou.aliyuncs.com
-    username: supconyun
-      # from_secret: docker_username
-    password: Hello123456
-      # from_secret: docker_password
+    username: 
+       from_secret: docker_username
+    password: 
+       from_secret: docker_password
     tags: lastest
   volumes:
   - name: docker
