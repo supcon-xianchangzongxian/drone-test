@@ -33,6 +33,7 @@ steps:
     host: mail.qq.com
     # skip_verify: true
     port: 80
+    skip_verify: true
     username: 824637572@qq.com
     password: qwerasdf123
     from: 824637572@qq.com 
