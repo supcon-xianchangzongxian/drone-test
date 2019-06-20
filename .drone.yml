@@ -25,15 +25,14 @@ steps:
   commands:
   - cd src/drone-demo
   - go build
-  - go test
+  # - go test
 - name: build
   image: docker
   commands:
-  # - cd /var/run/
-  # - ls
   - cd src/drone-demo
   - ls
   - docker  build -t registry.cn-hangzhou.aliyuncs.com/supcon_rd/drone-demo63:v1 .
+  - sudo docker login --username=supconyun registry.cn-hangzhou.aliyuncs.com --password=Hello123456
   - docker push registry.cn-hangzhou.aliyuncs.com/supcon_rd/drone-demo63:v1
   volumes:
   - name: docker
