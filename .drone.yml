@@ -47,7 +47,7 @@ steps:
   password:
     from_secret: docker_password
   tags: lastest
-  file: Dockerfile
+  file: src/drone-demo/Dockerfile
   volumes:
   - name: docker
     path: /var/run/docker.sock
