@@ -32,8 +32,8 @@ steps:
   settings:
     host: smtp.supcon.com
     port: 465
-    skip_verify: true
-    username: dignfeng2@supcon.com
+    # skip_verify: true
+    username: dingfeng2@supcon.com
     password: j5DpU>hP
     from: dignfeng2@supcon.com
     # secret: [mail.qq.com, 80, 824637572@qq.com,qwerasdf123,824637572@qq.com]
