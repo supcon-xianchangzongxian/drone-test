@@ -47,7 +47,7 @@ steps:
   image: plugins/docker
   # context: src/drone-demo
   settings:
-    # dockerfile: ./src/drone-demo/Dockerfile
+    dockerfile: ./src/drone-demo/Dockerfile
     context: ./src/drone-demo
     registry: registry.cn-hangzhou.aliyuncs.com
     repo: supcon_rd/drone-demo64
