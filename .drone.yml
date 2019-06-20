@@ -44,10 +44,10 @@ steps:
   #     from_secret: password
 - name: puslish
   image: plugins/docker
-  # Context: /drone/src/src/drone-demo
-  Dockerfile: src/drone-demo
-  registry: registry.cn-hangzhou.aliyuncs.com/supcon_rd
-  repo: drone-demo64
+  context: ./src/drone-demo
+  # dockerfile: src/drone-demo/Dockerfile
+  registry: registry.cn-hangzhou.aliyuncs.com
+  repo: supcon_rd/drone-demo64
   username:
     from_secret: docker_username
   password:
