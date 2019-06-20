@@ -38,14 +38,14 @@ steps:
   # - docker build -t registry.cn-hangzhou.aliyuncs.com/supcon_rd/drone-demo64:v1 .
   # - docker login --username=supconyun registry.cn-hangzhou.aliyuncs.com --password=Hello123456
   # - docker push registry.cn-hangzhou.aliyuncs.com/supcon_rd/drone-demo63:v1
-
+  # environment:
+  #   USERNAME:
+  #     from_secret: docker_username
+  #   PASSWORD:
+  #     from_secret: password
 - name: puslish
   image: plugins/docker
-  # commands:
-  # - pwd
-  # - cd src/drone-demo
-  # - ls
-  # file: /drone/src/src/drone-demo/Dockerfile
+  dockerfile: /src/drone-demo/Dockerfile
   registry: registry.cn-hangzhou.aliyuncs.com/supcon_rd
   repo: drone-demo64
   username:
@@ -53,7 +53,7 @@ steps:
   password:
     from_secret: docker_password
   tags: lastest
-  dockerfile: src/drone-demo/Dockerfile
+ 
 
   volumes:
   - name: docker
