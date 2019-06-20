@@ -41,7 +41,7 @@ steps:
   - cd src/drone-demo
   - ls
   registry: registry.cn-hangzhou.aliyuncs.com
-  repo: drone-demo64
+  repo: supcon_rd/drone-demo64
   username:
     from_secret: docker_username
   password:
