@@ -1,21 +1,3 @@
-
-
-# pipeline:
-#   build:
-#      image: golang:alpine
-#      # pull: true
-#      commands:
-#        - pwd
-#        - ls
-#        - cd src/drone-demo
-#       #  - go test
-#        - go build
-#        - ls
-#   puslish:
-#      image: plugins/docker
-     
-
-     
 kind: pipeline
 name: default
 # workspace:
@@ -24,30 +6,14 @@ steps:
 - name: backend
   image: golang
   commands:
-  # - go env
-  # - pwd
   - cd src/drone-demo
   - go build
-  # - ls
-  # - go test
-# - name: build
-#   image: docker
-#   commands:
-#   - cd src/drone-demo
-  # - docker build -t registry.cn-hangzhou.aliyuncs.com/supcon_rd/drone-demo64:v1 .
-  # - docker login --username=supconyun registry.cn-hangzhou.aliyuncs.com --password=Hello123456
-  # - docker push registry.cn-hangzhou.aliyuncs.com/supcon_rd/drone-demo63:v1
-  # environment:
-  #   USERNAME:
-  #     from_secret: docker_username
-  #   PASSWORD:
-  #     from_secret: password
+
 - name: puslish
   image: plugins/docker
   settings:
     dockerfile: ./src/drone-demo/Dockerfile
     context: ./src/drone-demo
-    
     repo: registry.cn-hangzhou.aliyuncs.com/supcon_rd/drone-demo64
     registry: registry.cn-hangzhou.aliyuncs.com
     username: 
@@ -68,8 +34,7 @@ steps:
   password: j5DpU>hP
   from: dingfeng2@supcon.com 
   recipients: [ tongcheng@supcon.com,wengtingting@supcon.com,dingfeng2@supcon.com ]
-  when:
-    status: [ changed, failure ]
+
 volumes:
 - name: docker
   host:
