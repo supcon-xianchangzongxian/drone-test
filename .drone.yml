@@ -14,17 +14,20 @@
 #   puslish:
 #      image: plugins/docker
      
-   
+
      
 kind: pipeline
 name: default
-
+workspace:
+  base: /go
+  path: src/drone-demo/
 steps:
 - name: backend
   image: golang
   commands:
   - go env
-  - cd src/drone-demo
+  - pwd
+  # - cd src/drone-demo
   - go build
   # - go test
 # - name: build
@@ -41,7 +44,7 @@ steps:
   # - pwd
   # - cd src/drone-demo
   # - ls
-  file: /drone/src/src/drone-demo/Dockerfile
+  # file: /drone/src/src/drone-demo/Dockerfile
   registry: registry.cn-hangzhou.aliyuncs.com/supcon_rd
   repo: drone-demo64
   username:
