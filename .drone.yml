@@ -30,7 +30,7 @@ steps:
 - name: notify
   image: drillster/drone-email  
   settings:
-    host: https://mail.supcon.com
+    host: mail.supcon.com
     # skip_verify: true
     port: 80
     username: dingfeng2@supcon.com
