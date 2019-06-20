@@ -23,26 +23,30 @@ steps:
 - name: backend
   image: golang
   commands:
+  - go env
   - cd src/drone-demo
   - go build
   # - go test
-- name: build
-  image: docker
-  commands:
-  - cd src/drone-demo
-  - ls
-  - docker  build -t registry.cn-hangzhou.aliyuncs.com/supcon_rd/drone-demo64:v1 .
+# - name: build
+#   image: docker
+#   commands:
+#   - cd src/drone-demo
+  # - docker build -t registry.cn-hangzhou.aliyuncs.com/supcon_rd/drone-demo64:v1 .
   # - docker login --username=supconyun registry.cn-hangzhou.aliyuncs.com --password=Hello123456
   # - docker push registry.cn-hangzhou.aliyuncs.com/supcon_rd/drone-demo63:v1
 
 - name: puslish
   iamge: plugins/docker
+  commands:
+  - cd src/drone-demo
   settings:
-    repo: registry.cn-hangzhou.aliyuncs.com
+    registry: registry.cn-hangzhou.aliyuncs.com
     username:
       from_secret: docker_username
     password:
       from_secret: docker_password
+    tags:
+        - latest
   volumes:
   - name: docker
     path: /var/run/docker.sock
